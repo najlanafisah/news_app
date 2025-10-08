@@ -9,4 +9,22 @@ class Constants {
   // List of endpoints
   static const String topHeadlines = '/top-headlines';
   static const String everything = '/everything';
+
+  // List of categories
+  static const List<String> categories = [
+    'general',
+    'technology',
+    'business',
+    'sports',
+    'health',
+    'science',
+    'entertaiment',
+  ];
+
+  // countries
+  static const String defaultCountry = 'us';
+
+  // App info
+  static const String appName = 'News App';
+  static const String appVersion = '1.0';
 }
