@@ -1,6 +1,4 @@
 import 'dart:convert';
-import 'dart:ffi';
-
 import 'package:news_app/models/news_respons.dart';
 import 'package:news_app/utils/constants.dart';
 // mendfinisikan sebuah package/library menjadi sebuah variable secara langsung 
