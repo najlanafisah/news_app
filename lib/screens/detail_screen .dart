@@ -8,10 +8,10 @@ import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
-class DetailScreen  extends StatelessWidget {
+class NewsDetailScreen  extends StatelessWidget {
   final NewsArticles article = Get.arguments as NewsArticles;
 
-  DetailScreen ({super.key});
+  NewsDetailScreen ({super.key});
 
   @override
   Widget build(BuildContext context) {
