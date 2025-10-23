@@ -14,7 +14,7 @@ class _LoadingShimmerState extends State<LoadingShimmer>
   late Animation<double> _animation;
 
   @override
-  void initstate() {
+  void initState() {
     super.initState();
     _animationController = AnimationController(
       duration: Duration(milliseconds: 1500),
