@@ -1,14 +1,14 @@
 import 'package:news_app/models/news_articles,.dart';
 
-class NewsRespons {
+class NewsResponse {
   final String status;
   final int totalResults;
   final List<NewsArticles> articles;
 
-  NewsRespons({required this.status, required this.totalResults, required this.articles});
+  NewsResponse({required this.status, required this.totalResults, required this.articles});
 
-  factory NewsRespons.fromJson(Map<String, dynamic> json) {
-    return NewsRespons(
+  factory NewsResponse.fromJson(Map<String, dynamic> json) {
+    return NewsResponse(
       status: json['status'] ?? '',
       totalResults: json['totalResults'] ?? 0,
       // Kode yang digunakan untuk mengkonversi data mentah dari server

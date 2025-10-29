@@ -10,7 +10,7 @@ class NewsController extends GetxController {
   // observable variables (variable yang bisa berubah)
   final _isLoading = false.obs;
   final _articles = <NewsArticles>[].obs; // untuk menampilkan daftar berita yang sudah/berhasil didapat
-  final _selectedCategory = 'general'.obs; // untuk handle kategori...  pokoknya dia listnya amsih kosong biar diisi sama data2 dari rest api nanti
+  final _selectedCategory = 'general'.obs; // untuk handle kategori...  pokoknya dia listnya msih kosong biar diisi sama data2 dari rest api nanti
   final _error = ''.obs; // kalo ada kesalahan, pesan error akan d....
 
   // getters
@@ -28,7 +28,7 @@ class NewsController extends GetxController {
 
   // pake future karena ada proses tunggu2an
   Future<void> fetchTopHeadlines({String? category}) async {
-    // blok ini akan dijalankan katika REST API berhasil berkomunikasi dengan server
+    // blok ini akan dijalankan ketika REST API berhasil berkomunikasi dengan server
     try {
       _isLoading.value = true;
       _error.value = '';
@@ -49,6 +49,14 @@ class NewsController extends GetxController {
     } finally {
       _isLoading.value = false;
     }
+  }
+
+  // TODO: tambahin ini agar fetchTopHeadlines bisa langsung terinisialisasi ketika aplikasi berada di home screen, khususnya ketika perpindahan dari splash screen ke home screen 
+
+  @override 
+  void onInit() {
+    super.onInit();
+    fetchTopHeadlines();
   }
 
   Future<void> refreshNews() async {

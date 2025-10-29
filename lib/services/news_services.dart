@@ -9,8 +9,8 @@ class NewsServices {
   static final String _apiKey = Constants.apiKey;
 
   // FUngsi yang bertujuan untuk membuat request GET ke server
-  Future<NewsRespons> getTopHeadLines({
-    String county = Constants.defaultCountry,
+  Future<NewsResponse> getTopHeadLines({
+    String country = Constants.defaultCountry,
     String? category,
     int page = 1,
     int pageSize = 20
@@ -18,7 +18,7 @@ class NewsServices {
     try {
       final Map<String, String> queryParams = {
         'apiKey': _apiKey,
-        'country': county,
+        'country': country,
         'page': page.toString(),
         'pageSize': pageSize.toString(),
       };
@@ -40,7 +40,7 @@ class NewsServices {
       if (response.statusCode == 200) {
         // untuk mengubah data dari json ke bahasa dart
         final jsonData = json.decode(response.body);
-        return NewsRespons.fromJson(jsonData);
+        return NewsResponse.fromJson(jsonData);
       // kode yang akan dijalankan jika requst ke API gagal atau status HTTP != 200
       } else {
         throw Exception('Failed to load news, please try again later.');
@@ -52,7 +52,7 @@ class NewsServices {
     }
   }
 
-  Future<NewsRespons> searchNews({
+  Future<NewsResponse> searchNews({
     required String query, // ini adlaah nilai yang dimasukkan ke kolom pencarian
     int page = 1, // ini untuk mendefinisikan halaman berita ke berapa
     int pageSize = 20, // berapa banyak berita yang ingin ditampilkan ketika sekali roses rendering/memuat data
@@ -77,7 +77,7 @@ class NewsServices {
 
       if (response.statusCode == 200) {
         final jsonData = json.decode(response.body);
-        return NewsRespons.fromJson(jsonData);
+        return NewsResponse.fromJson(jsonData);
       } else {
         throw Exception('Failed to load news, please try again later.');
       }

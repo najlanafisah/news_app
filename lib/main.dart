@@ -9,7 +9,7 @@ void main() async { // ini async karena dia mengambil data dari internet
   WidgetsFlutterBinding.ensureInitialized();
 
   // load environment variables first before runing the app
-  await dotenv.load(fileName: '.env'); // ini .env dipanggil sebelum di runing = karena di sana tersimpan API KEY dan kita gabakal bisa ngambil data kalo gaada API KEY
+  await dotenv.load(fileName: '.env'); // ini .env dipanggil sebelum di running = karena di sana tersimpan API KEY dan kita gabakal bisa ngambil data kalo gaada API KEY
 
   runApp(NewsApp());
 }

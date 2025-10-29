@@ -17,7 +17,8 @@ class NewsArticles {
       urlToImage: json['urlToImage'],
       publishedAt: json['publishedAt'],
       content: json['content'],
-      source: json['source'] != null ? Source.fromJson(json['soure']) : null
+      // TODO: LALA TYPO DISINI, HARUSNYA SOUCE, TAPI LALA NGETIKNYA SOURE
+      source: json['source'] != null ? Source.fromJson(json['source']) : null
     );
   }
 
